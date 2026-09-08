@@ -1,0 +1,14 @@
+{
+  "name": "c-recovery-tracker",
+  "version": "1.0.0",
+  "description": "Gamified GUI application to track C programming recovery course progress.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "evaluate": "node evaluate.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Recovery Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- HEADER BAR -->
+    <header class="main-header">
+      <div class="brand-section">
+        <div class="logo-icon">💻</div>
+        <div>
+          <h1 class="app-title">C RECOVERY TRACKER</h1>
+          <p class="app-subtitle">Gamified Learning & Skill Recovery Roadmap</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="rank-badge-pill" id="headerRankBadge">
+          <span class="rank-icon" id="headerRankIcon">🥚</span>
+          <span class="rank-name" id="headerRankName">C Beginner</span>
+        </div>
+
+        <button class="btn btn-primary" id="btnOpenTeacherPanel">
+          <span class="btn-icon">🎓</span> Teacher Panel
+        </button>
+
+        <button class="btn btn-secondary" id="btnOpenDataModal">
+          <span class="btn-icon">💾</span> Backup & Export
+        </button>
+
+        <button class="btn btn-accent" id="btnImportFromDesktop" title="Import progress exported from the Desktop App">
+          <span class="btn-icon">📥</span> Import from Desktop
+        </button>
+
+        <button class="btn btn-icon-only" id="btnAudioToggle" title="Toggle Sound FX">
+          🔊
+        </button>
+      </div>
+    </header>
+
+    <!-- DASHBOARD MAIN GRID -->
+    <main class="dashboard-grid">
+
+      <!-- LEFT COLUMN: XP, MISSION, & LEVEL MAP -->
+      <section class="main-content-col">
+
+        <!-- XP & RANK BANNER CARD -->
+        <div class="card xp-hero-card">
+          <div class="xp-hero-content">
+            <div class="xp-value-group">
+              <span class="xp-number" id="dashTotalXP">0</span>
+              <span class="xp-unit">XP</span>
+            </div>
+            <div class="rank-title-group">
+              <h2 class="current-rank-title" id="dashRankTitle">🥚 C Beginner</h2>
+              <p class="rank-next-text" id="dashNextRankText">500 XP needed for 🌱 C Learner</p>
+            </div>
+          </div>
+
+          <div class="xp-progress-container">
+            <div class="xp-bar-bg">
+              <div class="xp-bar-fill" id="dashXPBarFill" style="width: 0%;"></div>
+            </div>
+            <div class="xp-bar-labels">
+              <span id="dashXPProgressText">0 / 500 XP</span>
+              <span id="dashXPPercentage">0%</span>
+            </div>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-pill">
+              <span class="pill-icon">🔥</span>
+              <span class="pill-label">Streak:</span>
+              <strong class="pill-value" id="dashStreak">0 Days</strong>
+            </div>
+            <div class="stat-pill">
+              <span class="pill-icon">🎯</span>
+              <span class="pill-label">Completed:</span>
+              <strong class="pill-value" id="dashCompletedCount">0 / 120</strong>
+            </div>
+            <div class="stat-pill">
+              <span class="pill-icon">🏅</span>
+              <span class="pill-label">Badges:</span>
+              <strong class="pill-value" id="dashBadgesCount">0 / 8</strong>
+            </div>
+            <div class="stat-pill">
+              <span class="pill-icon">📈</span>
+              <span class="pill-label">Overall:</span>
+              <strong class="pill-value" id="dashOverallPercent">0%</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- CURRENT MISSION CARD -->
+        <div class="card current-mission-card" id="currentMissionCard">
+          <div class="mission-header">
+            <div class="mission-tag">CURRENT MISSION</div>
+            <div class="mission-status-pill status-in-progress" id="missionStatusPill">IN PROGRESS</div>
+          </div>
+
+          <div class="mission-body">
+            <div class="mission-day-badge" id="missionDayBadge">DAY 1</div>
+            <div class="mission-info">
+              <h3 class="mission-topic-title" id="missionTopicTitle">C Basics + Input/Output</h3>
+              <div class="mission-level-badge level-basic" id="missionLevelBadge">
+                <span class="dot">🟢</span> BASIC • 5 Questions • 100 XP
+              </div>
+            </div>
+          </div>
+
+          <p class="mission-summary-text" id="missionSummaryText">
+            Write simple C programs printing text, newlines, escape characters, and basic formatted outputs.
+          </p>
+
+          <div class="mission-actions">
+            <button class="btn btn-accent btn-large" id="btnViewAssignment">
+              📖 View Assignment Questions
+            </button>
+            <button class="btn btn-success btn-large" id="btnRecordMissionComplete">
+              ✅ Record Level Completion
+            </button>
+          </div>
+        </div>
+
+        <!-- VISUAL LEVEL MAP ROADMAP -->
+        <div class="card level-map-card">
+          <div class="section-title-row">
+            <h2>🗺️ Course Progression Map</h2>
+            <div class="level-legend">
+              <span class="legend-item"><span class="badge-dot dot-basic">🟢</span> Basic (+100 XP)</span>
+              <span class="legend-item"><span class="badge-dot dot-medium">🟡</span> Medium (+200 XP)</span>
+              <span class="legend-item"><span class="badge-dot dot-hard">🔴</span> Hard (+300 XP)</span>
+              <span class="legend-item"><span class="badge-dot dot-boss">⚫</span> Boss (+500 XP)</span>
+            </div>
+          </div>
+
+          <p class="map-subtitle">Complete levels sequentially to unlock the next challenge!</p>
+
+          <div class="level-map-container" id="levelMapContainer">
+            <!-- Dynamic Day Nodes rendered by JS -->
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- RIGHT COLUMN: TOPICS, BADGES, STATS, & ACTIVITY -->
+      <aside class="sidebar-col">
+
+        <!-- TABBED NAVIGATION FOR SIDEBAR -->
+        <div class="sidebar-tabs">
+          <button class="tab-btn active" data-tab="tabTopics">📚 Topics</button>
+          <button class="tab-btn" data-tab="tabBadges">🏅 Badges</button>
+          <button class="tab-btn" data-tab="tabStats">📊 Stats</button>
+          <button class="tab-btn" data-tab="tabActivity">📜 Feed</button>
+        </div>
+
+        <!-- TAB 1: TOPIC PROGRESS BREAKDOWN -->
+        <div class="tab-content active" id="tabTopics">
+          <div class="card topic-progress-card">
+            <h3 class="sidebar-card-title">30-Day Topic Breakdown</h3>
+            <div class="topic-list" id="topicListContainer">
+              <!-- Dynamically populated topics -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: BADGES GALLERY -->
+        <div class="tab-content" id="tabBadges">
+          <div class="card badges-card">
+            <h3 class="sidebar-card-title">Badges Collection</h3>
+            <div class="badges-grid" id="badgesGridContainer">
+              <!-- Dynamically populated badges -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: DETAILED STATISTICS -->
+        <div class="tab-content" id="tabStats">
+          <div class="card stats-card">
+            <h3 class="sidebar-card-title">Recovery Statistics</h3>
+            <div class="stats-grid" id="statsGridContainer">
+              <!-- Dynamic stats -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: ACTIVITY HISTORY -->
+        <div class="tab-content" id="tabActivity">
+          <div class="card activity-card">
+            <h3 class="sidebar-card-title">Recent Activity History</h3>
+            <div class="activity-feed" id="activityFeedContainer">
+              <!-- Dynamic activity items -->
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+  </div>
+
+
+  <!-- MODAL 1: ASSIGNMENT QUESTIONS VIEWER -->
+  <div class="modal-overlay" id="assignmentModal">
+    <div class="modal-card modal-large">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag" id="assignModalTag">DAY 1 • BASIC</span>
+          <h2 class="modal-title" id="assignModalTitle">C Basics + Input/Output</h2>
+        </div>
+        <button class="modal-close" id="btnCloseAssignModal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="assignment-banner">
+          <p><strong>Topic Focus:</strong> <span id="assignModalTopics">C Basics</span></p>
+          <p><strong>Reward:</strong> <span id="assignModalXPReward">+100 XP</span></p>
+        </div>
+
+        <div class="assignment-notice">
+          ℹ️ Solve these C problems yourself, then submit your C code to your AI Teacher/ChatGPT for verification. No answers are displayed here.
+        </div>
+
+        <div class="questions-list" id="assignQuestionsList">
+          <!-- Dynamic question list from database -->
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnCopyAssignment">📋 Copy Prompt for AI Teacher</button>
+        <button class="btn btn-success" id="btnModalRecordComplete">✅ Level Approved by Teacher</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 2: TEACHER / EVALUATOR CONTROL PANEL -->
+  <div class="modal-overlay" id="teacherModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">TEACHER & AI EVALUATION PANEL</span>
+          <h2 class="modal-title">Record Approved Level</h2>
+        </div>
+        <button class="modal-close" id="btnCloseTeacherModal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-desc">
+          After the AI Teacher/ChatGPT confirms that the user's C code passes the level, select the parameters below to record progress and unlock the next stage.
+        </p>
+
+        <form id="teacherForm">
+          <div class="form-group">
+            <label for="evalDaySelect">Select Day / Topic:</label>
+            <select id="evalDaySelect" class="form-control">
+              <!-- Dynamically populated Days -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="evalLevelSelect">Select Difficulty Level:</label>
+            <select id="evalLevelSelect" class="form-control">
+              <option value="basic">🟢 Basic (+100 XP)</option>
+              <option value="medium">🟡 Medium (+200 XP)</option>
+              <option value="hard">🔴 Hard (+300 XP)</option>
+              <option value="boss">⚫ Boss (+500 XP)</option>
+            </select>
+          </div>
+
+          <div class="form-checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="evalPerfectCheck">
+              <span>💯 <strong>Mark as Perfect Level</strong> (+100 Bonus XP)</span>
+            </label>
+            <p class="help-text">Only check if the C solution had zero errors, clean code style, and optimal logic!</p>
+          </div>
+
+          <div class="terminal-hint-box">
+            <p><strong>Programmatic CLI Alternative:</strong></p>
+            <code>python evaluate.py --day 1 --level basic --perfect</code>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnCancelTeacherModal">Cancel</button>
+        <button class="btn btn-success" id="btnSubmitTeacherEval">🏆 Record & Award XP</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 3: CELEBRATION REWARD POPUP -->
+  <div class="modal-overlay" id="celebrationModal">
+    <div class="modal-card celebration-card">
+      <canvas id="confettiCanvas"></canvas>
+      <div class="celebration-content">
+        <div class="celebration-icon">🎉</div>
+        <h2 class="celebration-header">LEVEL COMPLETE!</h2>
+
+        <div class="celebration-level-info" id="celebLevelInfo">
+          DAY 1 — C BASICS<br>🟢 BASIC
+        </div>
+
+        <div class="celebration-xp-pill" id="celebXPEarned">+100 XP</div>
+
+        <div class="celeb-extra-container" id="celebExtras">
+          <!-- Rank up / Badge alerts rendered dynamically -->
+        </div>
+
+        <div class="celeb-next-unlocked" id="celebNextUnlocked">
+          🔓 NEXT LEVEL UNLOCKED: 🟡 MEDIUM
+        </div>
+
+        <button class="btn btn-primary btn-large" id="btnCloseCelebration">Continue Journey 🚀</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 4: BACKUP, EXPORT & RESTORE -->
+  <div class="modal-overlay" id="dataModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">DATA MANAGEMENT</span>
+          <h2 class="modal-title">Backup & Restore Progress</h2>
+        </div>
+        <button class="modal-close" id="btnCloseDataModal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- IMPORT FROM DESKTOP APP -->
+        <div class="data-option-box" id="desktopImportSection" style="background: linear-gradient(135deg, #eef2ff, #e0e7ff); border: 2px solid #6366f1;">
+          <h3>📥 Import from Desktop App</h3>
+          <p style="font-size: 13px; color: #3730a3; margin-bottom: 12px;">
+            Import progress exported from the <strong>C Recovery Tracker Desktop App</strong>. 
+            Select the JSON file exported from the desktop app.
+          </p>
+          <input type="file" id="desktopImportFileInput" accept=".json" style="display:none;">
+          <button class="btn btn-primary" id="btnChooseDesktopImport" style="width: 100%;">📥 Choose Desktop Export File</button>
+          <div id="desktopImportStatus" style="margin-top: 10px; display: none; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 600;"></div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="data-option-box">
+          <h3>📥 Export Progress JSON</h3>
+          <p>Save your progress to a downloadable backup JSON file on your machine.</p>
+          <button class="btn btn-primary" id="btnExportJSON">Download progress.json</button>
+        </div>
+
+        <hr class="divider">
+
+        <div class="data-option-box">
+          <h3>📤 Restore Progress</h3>
+          <p>Import a previously backed up progress JSON file or paste JSON code.</p>
+          <input type="file" id="importFileInput" accept=".json" style="display:none;">
+          <button class="btn btn-secondary" id="btnChooseImportFile">Choose Backup File</button>
+          <textarea id="importJsonTextarea" class="form-control code-textarea" placeholder="Or paste progress JSON string here..."></textarea>
+          <button class="btn btn-warning" id="btnApplyRestore">Restore Progress Data</button>
+        </div>
+
+        <hr class="divider">
+
+        <div class="data-option-box danger-box">
+          <h3>⚠️ Reset Progress</h3>
+          <p>Reset all XP, ranks, and unlocked levels back to Day 1 Basic initial state.</p>
+          <button class="btn btn-danger" id="btnOpenResetConfirm">Reset Progress...</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 5: RESET CONFIRMATION -->
+  <div class="modal-overlay" id="resetConfirmModal">
+    <div class="modal-card danger-modal">
+      <div class="modal-header">
+        <h2 class="modal-title">⚠️ Confirm Reset</h2>
+        <button class="modal-close" id="btnCloseResetModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>This action will <strong>permanently erase all earned XP, ranks, badges, and level completions</strong>.</p>
+        <p>To confirm, type <strong>RESET</strong> in the box below:</p>
+        <input type="text" id="resetConfirmInput" class="form-control" placeholder="Type RESET to confirm">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnCancelReset">Cancel</button>
+        <button class="btn btn-danger" id="btnConfirmReset" disabled>Erase All Progress</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SCRIPTS -->
+  <script src="js/courseData.js"></script>
+  <script src="js/gamification.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

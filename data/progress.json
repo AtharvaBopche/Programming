@@ -1,0 +1,25 @@
+{
+  "totalXP": 0,
+  "rank": "🥚 C Beginner",
+  "currentDay": 1,
+  "currentLevel": "basic",
+  "completedLevels": [],
+  "unlockedLevels": [
+    "day1_basic"
+  ],
+  "badges": [],
+  "streak": 0,
+  "longestStreak": 0,
+  "lastCompletedDate": null,
+  "activityHistory": [
+    {
+      "id": "reset",
+      "title": "Progress Reset",
+      "description": "Progress was reset to Day 1 Basic.",
+      "xp": 0,
+      "timestamp": "2026-09-08T09:37:53.829601",
+      "type": "warning"
+    }
+  ],
+  "perfectLevels": []
+}
