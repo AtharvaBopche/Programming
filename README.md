@@ -35,18 +35,16 @@ Progress is **never** auto-awarded just by clicking around. It is recorded inten
 ### Method A: Via GUI Teacher Panel (Recommended)
 1. Click the **"🎓 Teacher Panel"** button in the header (or **"✅ Record Level Completion"** on your mission card).
 2. Select the **Day/Topic** and **Difficulty Level** (🟢 Basic, 🟡 Medium, 🔴 Hard, ⚫ Boss).
-3. (Optional) Check **"💯 Mark as Perfect Level"** if your solution had clean style and optimal logic to earn **+100 Bonus XP**.
-4. Click **"🏆 Record & Award XP"**.
-5. Enjoy the victory fanfare & celebration modal!
+3. Enter the exact **Performance XP** score awarded by your AI Teacher (or use quick preset buttons ⭐ 100%, 🟢 90%, 🟡 80%, 🟠 60%, 🔴 40%).
+4. (Optional) Check **"💯 Mark as Perfect Solution"** if your solution had clean style and optimal logic to earn **+100 Bonus XP**.
+5. Click **"🏆 Record & Award XP"**.
 
 ### Method B: Programmatically via Terminal CLI
-Codex or your teacher can record progress directly from the command line:
+Record progress directly from the command line with custom performance XP:
 
 ```bash
-python evaluate.py --day 1 --level basic --perfect
+python evaluate.py --day 1 --level basic --xp 84
 ```
-
-> **Note**: The system prevents double-awarding XP for already completed levels.
 
 ---
 
@@ -58,15 +56,17 @@ python evaluate.py --day 1 --level basic --perfect
 
 ---
 
-## 🎮 5. Gamification & XP System
+## 🎮 5. Gamification & Performance XP System
 
-| Achievement | XP Awarded |
-| :--- | :---: |
-| 🟢 Basic Level Completed | **+100 XP** |
-| 🟡 Medium Level Completed | **+200 XP** |
-| 🔴 Hard Level Completed | **+300 XP** |
-| ⚫ Boss Level Defeated | **+500 XP** |
-| 💯 Perfect Level Bonus | **+100 Bonus XP** |
+XP is awarded dynamically based on how well you solved the problem (Correctness, Complexity, Code Quality, Edge Cases):
+
+| Level Tier | Max XP Allowed | Performance Evaluation Range |
+| :--- | :---: | :--- |
+| 🟢 Basic Level | **100 XP** | Any score between 0 and 100 XP (e.g., 84/100) |
+| 🟡 Medium Level | **200 XP** | Any score between 0 and 200 XP (e.g., 174/200) |
+| 🔴 Hard Level | **300 XP** | Any score between 0 and 300 XP (e.g., 265/300) |
+| ⚫ Boss Challenge | **500 XP** | Any score between 0 and 500 XP (e.g., 480/500) |
+| 💯 Perfect Bonus | **+100 XP** | Bonus for clean style & optimal time complexity |
 
 ### 🏆 Ranks Pipeline
 - **🥚 C Beginner**: 0 – 499 XP

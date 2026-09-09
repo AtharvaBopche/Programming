@@ -434,9 +434,36 @@ function openAssignmentModal(dayNum, levelType) {
   };
 
   document.getElementById('btnCopyAssignment').onclick = () => {
-    const promptText = `I am taking the C Programming Recovery Course.\nDay ${dayNum}: ${day.title}\nDifficulty Level: ${levelType.toUpperCase()}\n\nPlease review/give assignments covering these topics: ${(day.topics || []).join(', ')}.\nHere are the target questions from my recovery database:\n${questions.map((q, i) => `${i+1}. ${q}`).join('\n')}`;
+    const maxXp = GAMIFICATION.XP_TABLE[levelType] || 100;
+    const promptText = `I am taking the C Programming & Advanced DSA Recovery Roadmap Course.
+
+📍 Day ${dayNum}: ${day.title}
+🎯 Difficulty Level: ${levelType.toUpperCase()} (Max XP: ${maxXp} XP)
+📚 Topics: ${(day.topics || []).join(', ')}
+
+Please evaluate my C code solution based on:
+- Correctness & Output (0–10)
+- Logic & Edge Cases (0–10)
+- Time Complexity (0–10)
+- Space Complexity (0–10)
+- Code Quality & Style (0–10)
+
+🎯 Performance XP Rubric (Max XP: ${maxXp}):
+- ❌ No attempt / major errors (0–20%): 0 - ${Math.round(maxXp * 0.2)} XP
+- 🔴 Poor (20–40%): ${Math.round(maxXp * 0.2)} - ${Math.round(maxXp * 0.4)} XP
+- 🟠 Needs improvement (40–60%): ${Math.round(maxXp * 0.4)} - ${Math.round(maxXp * 0.6)} XP
+- 🟡 Good (60–80%): ${Math.round(maxXp * 0.6)} - ${Math.round(maxXp * 0.8)} XP
+- 🟢 Very good (80–95%): ${Math.round(maxXp * 0.8)} - ${Math.round(maxXp * 0.95)} XP
+- ⭐ Excellent (95–100%): ${Math.round(maxXp * 0.95)} - ${maxXp} XP
+
+Here are my target questions:
+${questions.map((q, i) => `${i+1}. ${q}`).join('\n')}
+
+Please review my C solution code, point out any complexity optimizations, and award an exact performance XP score in this format:
+XP Earned: [Score] / ${maxXp} XP`;
+
     navigator.clipboard.writeText(promptText).then(() => {
-      alert("Assignment questions copied to clipboard! Paste into ChatGPT for feedback or evaluation.");
+      alert("Assignment prompt & AI Teacher scoring rubric copied to clipboard!\n\nPaste into ChatGPT for detailed evaluation and exact performance XP score.");
     });
   };
 
@@ -451,26 +478,52 @@ function openTeacherPanel(dayNum = null, levelType = null) {
   } else {
     document.getElementById('evalDaySelect').value = progressState.currentDay || 1;
   }
+  const lvlSel = document.getElementById('evalLevelSelect');
   if (levelType) {
-    document.getElementById('evalLevelSelect').value = levelType;
+    lvlSel.value = levelType;
   } else {
-    document.getElementById('evalLevelSelect').value = progressState.currentLevel || 'basic';
+    lvlSel.value = progressState.currentLevel || 'basic';
   }
 
+  updateTeacherPanelMaxXP();
   document.getElementById('evalPerfectCheck').checked = false;
   openModal('teacherModal');
+}
+
+function updateTeacherPanelMaxXP() {
+  const lvl = document.getElementById('evalLevelSelect').value || 'basic';
+  const maxXP = GAMIFICATION.XP_TABLE[lvl] || 100;
+  const inputXP = document.getElementById('evalCustomXP');
+  const hintMax = document.getElementById('evalMaxXPHint');
+  const txtPercent = document.getElementById('evalXPPercentText');
+
+  inputXP.max = maxXP;
+  hintMax.textContent = `Max: ${maxXP} XP`;
+
+  let currentVal = parseInt(inputXP.value);
+  if (isNaN(currentVal) || currentVal > maxXP) {
+    currentVal = maxXP;
+    inputXP.value = maxXP;
+  }
+
+  const pct = Math.min(100, Math.round((currentVal / maxXP) * 100));
+  txtPercent.textContent = `/ ${maxXP} XP (${pct}%)`;
 }
 
 async function submitEvaluation() {
   const day = parseInt(document.getElementById('evalDaySelect').value);
   const level = document.getElementById('evalLevelSelect').value;
   const perfect = document.getElementById('evalPerfectCheck').checked;
+  const customXPVal = parseInt(document.getElementById('evalCustomXP').value);
+
+  const maxLevelXP = GAMIFICATION.XP_TABLE[level] || 100;
+  const customXP = isNaN(customXPVal) ? maxLevelXP : Math.min(maxLevelXP, Math.max(0, customXPVal));
 
   try {
     const res = await fetch('/api/evaluate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ day, level, perfect })
+      body: JSON.stringify({ day, level, perfect, customXP })
     });
 
     if (res.ok) {
@@ -492,7 +545,7 @@ async function submitEvaluation() {
   }
 
   // Fallback client-side logic if backend offline
-  const result = processClientEvaluation(day, level, perfect);
+  const result = processClientEvaluation(day, level, perfect, customXP);
   if (result.success) {
     saveProgressData(progressState);
     closeModal('teacherModal');
@@ -503,13 +556,14 @@ async function submitEvaluation() {
   }
 }
 
-function processClientEvaluation(day, level, perfect) {
+function processClientEvaluation(day, level, perfect, customXP = null) {
   const key = `day${day}_${level}`;
   if ((progressState.completedLevels || []).includes(key)) {
     return { success: false, message: `Level Day ${day} ${level.toUpperCase()} already completed!` };
   }
 
-  const baseXP = GAMIFICATION.XP_TABLE[level] || 100;
+  const maxLevelXP = GAMIFICATION.XP_TABLE[level] || 100;
+  const baseXP = customXP !== null ? Math.min(maxLevelXP, Math.max(0, customXP)) : maxLevelXP;
   const bonusXP = perfect ? 100 : 0;
   const earned = baseXP + bonusXP;
 
@@ -539,10 +593,11 @@ function processClientEvaluation(day, level, perfect) {
   }
 
   // Activity log
+  const pct = Math.round((baseXP / maxLevelXP) * 100);
   progressState.activityHistory.unshift({
     id: `act_${Date.now()}`,
     title: `Day ${day} — ${level.toUpperCase()} Completed`,
-    description: `Earned +${earned} XP` + (perfect ? " (💯 Perfect Bonus!)" : ""),
+    description: `Earned +${baseXP}/${maxLevelXP} XP (${pct}%)` + (perfect ? " + 💯 Perfect Bonus!" : ""),
     xp: earned,
     timestamp: new Date().toISOString(),
     type: "completion"
@@ -673,6 +728,19 @@ function setupEventListeners() {
 
   // Modal open/close handlers
   document.getElementById('btnOpenTeacherPanel').onclick = () => openTeacherPanel();
+  document.getElementById('evalLevelSelect').onchange = updateTeacherPanelMaxXP;
+  document.getElementById('evalCustomXP').oninput = updateTeacherPanelMaxXP;
+
+  document.querySelectorAll('.xp-preset-btn').forEach(btn => {
+    btn.onclick = () => {
+      audioFX.playClickSound();
+      const pct = parseFloat(btn.dataset.percent) || 1.0;
+      const lvl = document.getElementById('evalLevelSelect').value || 'basic';
+      const maxXP = GAMIFICATION.XP_TABLE[lvl] || 100;
+      document.getElementById('evalCustomXP').value = Math.round(maxXP * pct);
+      updateTeacherPanelMaxXP();
+    };
+  });
   document.getElementById('btnCloseTeacherModal').onclick = () => closeModal('teacherModal');
   document.getElementById('btnCancelTeacherModal').onclick = () => closeModal('teacherModal');
   document.getElementById('btnSubmitTeacherEval').onclick = () => submitEvaluation();

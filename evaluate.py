@@ -15,11 +15,12 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluate & record C Recovery Tracker level completion.")
     parser.add_argument("--day", type=int, required=True, help="Day number (1-50)")
     parser.add_argument("--level", type=str, required=True, choices=["basic", "medium", "hard", "boss"], help="Level difficulty")
-    parser.add_argument("--perfect", action="store_true", help="Mark as perfect level to award bonus +100 XP")
+    parser.add_argument("--xp", type=int, default=None, help="Performance XP awarded by AI Teacher (0 to level max XP)")
+    parser.add_argument("--perfect", action="store_true", help="Mark as perfect solution to award bonus +100 XP")
 
     args = parser.parse_args()
 
-    result = process_level_completion(args.day, args.level.lower(), args.perfect)
+    result = process_level_completion(args.day, args.level.lower(), args.perfect, args.xp)
 
     if result["success"]:
         print("\n==========================================")

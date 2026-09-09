@@ -134,7 +134,7 @@ def check_badges(data):
 
     data["badges"] = list(earned)
 
-def process_level_completion(day, level, is_perfect=False):
+def process_level_completion(day, level, is_perfect=False, custom_xp=None):
     data = read_progress()
     key = f"day{day}_{level}"
 
@@ -152,7 +152,12 @@ def process_level_completion(day, level, is_perfect=False):
             "data": data
         }
 
-    base_xp = XP_TABLE.get(level, 100)
+    max_level_xp = XP_TABLE.get(level, 100)
+    if custom_xp is not None:
+        base_xp = min(max_level_xp, max(0, int(custom_xp)))
+    else:
+        base_xp = max_level_xp
+
     bonus_xp = 100 if is_perfect else 0
     earned_xp = base_xp + bonus_xp
 
@@ -192,10 +197,11 @@ def process_level_completion(day, level, is_perfect=False):
     check_badges(data)
     new_badges = list(set(data["badges"]) - old_badges)
 
+    pct = int(round((base_xp / max_level_xp) * 100))
     activity_item = {
         "id": f"act_{len(data['activityHistory']) + 1}",
         "title": f"Day {day} — {level.upper()} Completed",
-        "description": f"Earned +{earned_xp} XP" + (" (Includes 💯 Perfect Bonus!)" if is_perfect else ""),
+        "description": f"Earned +{base_xp}/{max_level_xp} XP ({pct}%)" + (" + 💯 Perfect Bonus!" if is_perfect else ""),
         "xp": earned_xp,
         "day": day,
         "level": level,
@@ -246,8 +252,9 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             day = int(payload.get('day', 1))
             level = str(payload.get('level', 'basic')).lower()
             perfect = bool(payload.get('perfect', False))
+            custom_xp = payload.get('customXP', None)
 
-            result = process_level_completion(day, level, perfect)
+            result = process_level_completion(day, level, perfect, custom_xp)
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')
