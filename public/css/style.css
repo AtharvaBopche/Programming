@@ -1158,3 +1158,57 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* PHASE BANNERS & FILTERS */
+.phase-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.phase-btn.active {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+.phase-divider-banner {
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  margin: 16px 0 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+.phase-divider-banner.phase-1 {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
+}
+
+.phase-divider-banner.phase-2 {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.phase-divider-banner h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sidebar-phase-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+

@@ -13,7 +13,7 @@ from server import process_level_completion, read_progress
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate & record C Recovery Tracker level completion.")
-    parser.add_argument("--day", type=int, required=True, help="Day number (1-30)")
+    parser.add_argument("--day", type=int, required=True, help="Day number (1-50)")
     parser.add_argument("--level", type=str, required=True, choices=["basic", "medium", "hard", "boss"], help="Level difficulty")
     parser.add_argument("--perfect", action="store_true", help="Mark as perfect level to award bonus +100 XP")
 

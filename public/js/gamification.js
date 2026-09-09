@@ -13,7 +13,10 @@ const GAMIFICATION = {
     { name: "⚔️ C Problem Solver", minXP: 1500, maxXP: 2999, badge: "⚔️", description: "Tackling control flow, arrays, and functions." },
     { name: "🔥 C Programmer", minXP: 3000, maxXP: 4999, badge: "🔥", description: "Mastering pointers, strings, and matrix logic." },
     { name: "💻 C Developer", minXP: 5000, maxXP: 7499, badge: "💻", description: "Building complex structures and memory management." },
-    { name: "👑 C Master", minXP: 7500, maxXP: 999999, badge: "👑", description: "Conquered the 30-Day C Recovery Course!" }
+    { name: "👑 C Master", minXP: 7500, maxXP: 11999, badge: "👑", description: "Conquered the Core 30-Day C Recovery Course!" },
+    { name: "🌳 DSA Specialist", minXP: 12000, maxXP: 17999, badge: "🌳", description: "Mastering Linked Lists, Stacks, Queues & Trees." },
+    { name: "⚡ Algorithm Architect", minXP: 18000, maxXP: 24999, badge: "⚡", description: "Conquering Heaps, Graphs, Greedy & Dynamic Programming." },
+    { name: "🚀 DSA Grandmaster", minXP: 25000, maxXP: 999999, badge: "🚀", description: "Conquered all 50 Days of Core C & Advanced DSA!" }
   ],
 
   BADGES: [
@@ -72,6 +75,20 @@ const GAMIFICATION = {
       description: "Conquer the Day 30 Student Management System Final Boss!",
       icon: "👑",
       category: "Ultimate"
+    },
+    {
+      id: "dsa_explorer",
+      title: "🌳 DSA Explorer",
+      description: "Unlock and complete your first Advanced DSA day (Days 31–50).",
+      icon: "🌳",
+      category: "Phase 2"
+    },
+    {
+      id: "dsa_grandmaster",
+      title: "🚀 DSA Grandmaster",
+      description: "Conquer the Day 50 DSA Capstone Challenge!",
+      icon: "🚀",
+      category: "Legendary"
     }
   ],
 
@@ -99,11 +116,11 @@ const GAMIFICATION = {
       }
     }
     return {
-      currentRank: "👑 C Master",
-      currentMin: 7500,
+      currentRank: "🚀 DSA Grandmaster",
+      currentMin: 25000,
       currentMax: 999999,
       nextRank: "Max Rank",
-      nextRankMinXP: 7500,
+      nextRankMinXP: 25000,
       xpNeeded: 0,
       percentage: 100,
       isMax: true

@@ -1881,5 +1881,1125 @@ const COURSE_DATA = [
         ]
       }
     }
+  },
+  {
+    "day": 31,
+    "title": "Arrays & Complexity",
+    "rawTitle": "Day 31",
+    "topics": [
+      "Arrays & Complexity"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 121,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Arrays & Complexity with 3 problem(s).",
+        "questions": [
+          "Find the maximum and minimum values in an array in one traversal.",
+          "Find the second-largest distinct element in one traversal.",
+          "Move all zeroes to the end while preserving non-zero order."
+        ]
+      },
+      "medium": {
+        "levelId": 122,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Arrays & Complexity with 3 problem(s).",
+        "questions": [
+          "Find the missing number from 1 to n.",
+          "Find the maximum sum of a contiguous subarray.",
+          "Find the majority element if one exists."
+        ]
+      },
+      "hard": {
+        "levelId": 123,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Arrays & Complexity with 3 problem(s).",
+        "questions": [
+          "Find the longest consecutive sequence in an unsorted array.",
+          "Find all pairs whose sum equals a target.",
+          "Find the smallest subarray with sum at least a target."
+        ]
+      },
+      "boss": {
+        "levelId": 124,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Arrays & Complexity with 1 problem(s).",
+        "questions": [
+          "Build an array toolkit and document time and space complexity for every operation."
+        ]
+      }
+    }
+  },
+  {
+    "day": 32,
+    "title": "Searching Algorithms",
+    "rawTitle": "Day 32",
+    "topics": [
+      "Searching Algorithms"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 125,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Searching Algorithms with 3 problem(s).",
+        "questions": [
+          "Implement linear search.",
+          "Implement iterative binary search.",
+          "Implement recursive binary search."
+        ]
+      },
+      "medium": {
+        "levelId": 126,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Searching Algorithms with 3 problem(s).",
+        "questions": [
+          "Find the first occurrence in a sorted array with duplicates.",
+          "Find the last occurrence in a sorted array with duplicates.",
+          "Count occurrences of a target in a sorted array."
+        ]
+      },
+      "hard": {
+        "levelId": 127,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Searching Algorithms with 3 problem(s).",
+        "questions": [
+          "Find a peak element using binary search.",
+          "Search for a target in a rotated sorted array.",
+          "Find the minimum in a rotated sorted array."
+        ]
+      },
+      "boss": {
+        "levelId": 128,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Searching Algorithms with 1 problem(s).",
+        "questions": [
+          "Build a search-algorithm laboratory with complexity statistics."
+        ]
+      }
+    }
+  },
+  {
+    "day": 33,
+    "title": "Sorting Algorithms",
+    "rawTitle": "Day 33",
+    "topics": [
+      "Sorting Algorithms"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 129,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Sorting Algorithms with 3 problem(s).",
+        "questions": [
+          "Implement bubble sort.",
+          "Implement selection sort.",
+          "Implement insertion sort."
+        ]
+      },
+      "medium": {
+        "levelId": 130,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Sorting Algorithms with 3 problem(s).",
+        "questions": [
+          "Implement merge sort.",
+          "Implement quicksort.",
+          "Sort an array containing only 0, 1, and 2 in linear time."
+        ]
+      },
+      "hard": {
+        "levelId": 131,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Sorting Algorithms with 3 problem(s).",
+        "questions": [
+          "Find the kth smallest element using sorting.",
+          "Compare five sorting algorithms by comparisons and swaps.",
+          "Sort an array of structures by a selected field."
+        ]
+      },
+      "boss": {
+        "levelId": 132,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Sorting Algorithms with 1 problem(s).",
+        "questions": [
+          "Build a sorting benchmark for multiple algorithms and datasets."
+        ]
+      }
+    }
+  },
+  {
+    "day": 34,
+    "title": "Recursion",
+    "rawTitle": "Day 34",
+    "topics": [
+      "Recursion"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 133,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Recursion with 3 problem(s).",
+        "questions": [
+          "Print 1 to n recursively.",
+          "Print n to 1 recursively.",
+          "Calculate factorial recursively."
+        ]
+      },
+      "medium": {
+        "levelId": 134,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Recursion with 3 problem(s).",
+        "questions": [
+          "Calculate Fibonacci recursively.",
+          "Calculate digit sum recursively.",
+          "Reverse a string recursively."
+        ]
+      },
+      "hard": {
+        "levelId": 135,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Recursion with 3 problem(s).",
+        "questions": [
+          "Check a string palindrome recursively.",
+          "Implement recursive binary search.",
+          "Generate all permutations of a string."
+        ]
+      },
+      "boss": {
+        "levelId": 136,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Recursion with 1 problem(s).",
+        "questions": [
+          "Solve the Tower of Hanoi problem."
+        ]
+      }
+    }
+  },
+  {
+    "day": 35,
+    "title": "Linked Lists Basics",
+    "rawTitle": "Day 35",
+    "topics": [
+      "Linked Lists Basics"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 137,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Linked Lists Basics with 3 problem(s).",
+        "questions": [
+          "Define a singly linked-list node.",
+          "Create and display a linked list.",
+          "Count nodes."
+        ]
+      },
+      "medium": {
+        "levelId": 138,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Linked Lists Basics with 3 problem(s).",
+        "questions": [
+          "Insert at the beginning.",
+          "Insert at the end.",
+          "Insert at a specified position."
+        ]
+      },
+      "hard": {
+        "levelId": 139,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Linked Lists Basics with 3 problem(s).",
+        "questions": [
+          "Delete the first node.",
+          "Delete the last node.",
+          "Reverse a singly linked list."
+        ]
+      },
+      "boss": {
+        "levelId": 140,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Linked Lists Basics with 1 problem(s).",
+        "questions": [
+          "Build a complete singly linked-list toolkit."
+        ]
+      }
+    }
+  },
+  {
+    "day": 36,
+    "title": "Advanced Linked Lists",
+    "rawTitle": "Day 36",
+    "topics": [
+      "Advanced Linked Lists"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 141,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Advanced Linked Lists with 3 problem(s).",
+        "questions": [
+          "Search a linked list.",
+          "Find maximum and minimum values.",
+          "Copy a linked list."
+        ]
+      },
+      "medium": {
+        "levelId": 142,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Advanced Linked Lists with 3 problem(s).",
+        "questions": [
+          "Merge two sorted linked lists.",
+          "Reverse recursively.",
+          "Split a linked list into two halves."
+        ]
+      },
+      "hard": {
+        "levelId": 143,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Advanced Linked Lists with 3 problem(s).",
+        "questions": [
+          "Detect a cycle.",
+          "Find the starting node of a cycle.",
+          "Check whether a linked list is a palindrome."
+        ]
+      },
+      "boss": {
+        "levelId": 144,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Advanced Linked Lists with 1 problem(s).",
+        "questions": [
+          "Build a reusable linked-list module with cycle detection and cleanup."
+        ]
+      }
+    }
+  },
+  {
+    "day": 37,
+    "title": "Doubly & Circular Linked Lists",
+    "rawTitle": "Day 37",
+    "topics": [
+      "Doubly & Circular Linked Lists"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 145,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Doubly & Circular Linked Lists with 3 problem(s).",
+        "questions": [
+          "Define a doubly linked-list node.",
+          "Traverse a doubly linked list forward and backward.",
+          "Insert into a doubly linked list."
+        ]
+      },
+      "medium": {
+        "levelId": 146,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Doubly & Circular Linked Lists with 3 problem(s).",
+        "questions": [
+          "Delete from a doubly linked list.",
+          "Reverse a doubly linked list.",
+          "Create a circular singly linked list."
+        ]
+      },
+      "hard": {
+        "levelId": 147,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Doubly & Circular Linked Lists with 3 problem(s).",
+        "questions": [
+          "Insert into a circular linked list.",
+          "Delete from a circular linked list.",
+          "Build a deque using a doubly linked list."
+        ]
+      },
+      "boss": {
+        "levelId": 148,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Doubly & Circular Linked Lists with 1 problem(s).",
+        "questions": [
+          "Build a round-robin scheduler using a circular linked list."
+        ]
+      }
+    }
+  },
+  {
+    "day": 38,
+    "title": "Stacks",
+    "rawTitle": "Day 38",
+    "topics": [
+      "Stacks"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 149,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Stacks with 3 problem(s).",
+        "questions": [
+          "Implement a stack using an array.",
+          "Implement push, pop, and peek.",
+          "Handle overflow and underflow."
+        ]
+      },
+      "medium": {
+        "levelId": 150,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Stacks with 3 problem(s).",
+        "questions": [
+          "Implement a stack using a linked list.",
+          "Reverse a string using a stack.",
+          "Check balanced parentheses using a stack."
+        ]
+      },
+      "hard": {
+        "levelId": 151,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Stacks with 3 problem(s).",
+        "questions": [
+          "Convert infix to postfix.",
+          "Evaluate a postfix expression.",
+          "Implement two stacks in one array."
+        ]
+      },
+      "boss": {
+        "levelId": 152,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Stacks with 1 problem(s).",
+        "questions": [
+          "Build an expression-processing toolkit using stacks."
+        ]
+      }
+    }
+  },
+  {
+    "day": 39,
+    "title": "Queues",
+    "rawTitle": "Day 39",
+    "topics": [
+      "Queues"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 153,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Queues with 3 problem(s).",
+        "questions": [
+          "Implement a queue using an array.",
+          "Implement enqueue and dequeue.",
+          "Handle overflow and underflow."
+        ]
+      },
+      "medium": {
+        "levelId": 154,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Queues with 3 problem(s).",
+        "questions": [
+          "Implement a queue using a linked list.",
+          "Implement a circular queue.",
+          "Build a menu-driven queue."
+        ]
+      },
+      "hard": {
+        "levelId": 155,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Queues with 3 problem(s).",
+        "questions": [
+          "Implement a deque.",
+          "Implement a priority queue.",
+          "Simulate round-robin scheduling using a queue."
+        ]
+      },
+      "boss": {
+        "levelId": 156,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Queues with 1 problem(s).",
+        "questions": [
+          "Build a queue simulator supporting multiple queue types."
+        ]
+      }
+    }
+  },
+  {
+    "day": 40,
+    "title": "Hashing",
+    "rawTitle": "Day 40",
+    "topics": [
+      "Hashing"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 157,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Hashing with 3 problem(s).",
+        "questions": [
+          "Explain the purpose of a hash function.",
+          "Implement a simple integer hash table.",
+          "Insert, search, and delete a key."
+        ]
+      },
+      "medium": {
+        "levelId": 158,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Hashing with 3 problem(s).",
+        "questions": [
+          "Implement linear probing.",
+          "Implement quadratic probing.",
+          "Track collisions."
+        ]
+      },
+      "hard": {
+        "levelId": 159,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Hashing with 3 problem(s).",
+        "questions": [
+          "Implement separate chaining.",
+          "Handle duplicate keys.",
+          "Implement rehashing using load factor."
+        ]
+      },
+      "boss": {
+        "levelId": 160,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Hashing with 1 problem(s).",
+        "questions": [
+          "Build a word-frequency counter using hashing."
+        ]
+      }
+    }
+  },
+  {
+    "day": 41,
+    "title": "Trees Basics",
+    "rawTitle": "Day 41",
+    "topics": [
+      "Trees Basics"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 161,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Trees Basics with 3 problem(s).",
+        "questions": [
+          "Define a binary-tree node.",
+          "Create a small binary tree.",
+          "Perform preorder traversal."
+        ]
+      },
+      "medium": {
+        "levelId": 162,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Trees Basics with 3 problem(s).",
+        "questions": [
+          "Perform inorder traversal.",
+          "Perform postorder traversal.",
+          "Perform level-order traversal."
+        ]
+      },
+      "hard": {
+        "levelId": 163,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Trees Basics with 3 problem(s).",
+        "questions": [
+          "Count nodes.",
+          "Find tree height.",
+          "Count leaf nodes."
+        ]
+      },
+      "boss": {
+        "levelId": 164,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Trees Basics with 1 problem(s).",
+        "questions": [
+          "Build a binary-tree toolkit with traversals and analysis."
+        ]
+      }
+    }
+  },
+  {
+    "day": 42,
+    "title": "Binary Search Trees",
+    "rawTitle": "Day 42",
+    "topics": [
+      "Binary Search Trees"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 165,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Binary Search Trees with 3 problem(s).",
+        "questions": [
+          "Create a BST node.",
+          "Insert values into a BST.",
+          "Search a BST."
+        ]
+      },
+      "medium": {
+        "levelId": 166,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Binary Search Trees with 3 problem(s).",
+        "questions": [
+          "Find minimum and maximum.",
+          "Delete a leaf.",
+          "Delete a node with one child."
+        ]
+      },
+      "hard": {
+        "levelId": 167,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Binary Search Trees with 3 problem(s).",
+        "questions": [
+          "Delete a node with two children.",
+          "Find the kth smallest element.",
+          "Check whether a binary tree is a valid BST."
+        ]
+      },
+      "boss": {
+        "levelId": 168,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Binary Search Trees with 1 problem(s).",
+        "questions": [
+          "Build a complete BST manager."
+        ]
+      }
+    }
+  },
+  {
+    "day": 43,
+    "title": "Heaps & Priority Queues",
+    "rawTitle": "Day 43",
+    "topics": [
+      "Heaps & Priority Queues"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 169,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Heaps & Priority Queues with 3 problem(s).",
+        "questions": [
+          "Explain min-heaps and max-heaps.",
+          "Represent a heap using an array.",
+          "Insert into a max-heap."
+        ]
+      },
+      "medium": {
+        "levelId": 170,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Heaps & Priority Queues with 3 problem(s).",
+        "questions": [
+          "Extract the maximum.",
+          "Implement heapify.",
+          "Build a heap from an unsorted array."
+        ]
+      },
+      "hard": {
+        "levelId": 171,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Heaps & Priority Queues with 3 problem(s).",
+        "questions": [
+          "Implement a min-heap.",
+          "Implement heap sort.",
+          "Find the kth largest element using a heap."
+        ]
+      },
+      "boss": {
+        "levelId": 172,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Heaps & Priority Queues with 1 problem(s).",
+        "questions": [
+          "Build a heap-based task scheduler."
+        ]
+      }
+    }
+  },
+  {
+    "day": 44,
+    "title": "Graphs Basics",
+    "rawTitle": "Day 44",
+    "topics": [
+      "Graphs Basics"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 173,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Graphs Basics with 3 problem(s).",
+        "questions": [
+          "Represent a graph using an adjacency matrix.",
+          "Represent a graph using adjacency lists.",
+          "Add an edge to an adjacency-list graph."
+        ]
+      },
+      "medium": {
+        "levelId": 174,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Graphs Basics with 3 problem(s).",
+        "questions": [
+          "Implement DFS recursively.",
+          "Implement DFS using a stack.",
+          "Implement BFS using a queue."
+        ]
+      },
+      "hard": {
+        "levelId": 175,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Graphs Basics with 3 problem(s).",
+        "questions": [
+          "Count reachable vertices.",
+          "Check whether a path exists.",
+          "Detect a cycle in an undirected graph."
+        ]
+      },
+      "boss": {
+        "levelId": 176,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Graphs Basics with 1 problem(s).",
+        "questions": [
+          "Find connected components."
+        ]
+      }
+    }
+  },
+  {
+    "day": 45,
+    "title": "Shortest Paths & MST",
+    "rawTitle": "Day 45",
+    "topics": [
+      "Shortest Paths & MST"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 177,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Shortest Paths & MST with 3 problem(s).",
+        "questions": [
+          "Represent a weighted graph.",
+          "Calculate the weight of a path.",
+          "Implement Dijkstra."
+        ]
+      },
+      "medium": {
+        "levelId": 178,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Shortest Paths & MST with 3 problem(s).",
+        "questions": [
+          "Reconstruct a shortest path using parents.",
+          "Implement Prim.",
+          "Implement Kruskal."
+        ]
+      },
+      "hard": {
+        "levelId": 179,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Shortest Paths & MST with 3 problem(s).",
+        "questions": [
+          "Implement union-find for Kruskal.",
+          "Implement Bellman-Ford.",
+          "Detect a negative-weight cycle."
+        ]
+      },
+      "boss": {
+        "levelId": 180,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Shortest Paths & MST with 1 problem(s).",
+        "questions": [
+          "Build a weighted-graph toolkit for shortest paths and MSTs."
+        ]
+      }
+    }
+  },
+  {
+    "day": 46,
+    "title": "Greedy Algorithms",
+    "rawTitle": "Day 46",
+    "topics": [
+      "Greedy Algorithms"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 181,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Greedy Algorithms with 3 problem(s).",
+        "questions": [
+          "Explain the greedy-choice idea.",
+          "Solve fractional knapsack.",
+          "Select maximum non-overlapping activities."
+        ]
+      },
+      "medium": {
+        "levelId": 182,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Greedy Algorithms with 3 problem(s).",
+        "questions": [
+          "Solve job sequencing with deadlines.",
+          "Calculate minimum platforms.",
+          "Implement activity selection after sorting."
+        ]
+      },
+      "hard": {
+        "levelId": 183,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Greedy Algorithms with 3 problem(s).",
+        "questions": [
+          "Build a Huffman coding tree.",
+          "Generate Huffman codes.",
+          "Compare greedy and brute-force solutions on small cases."
+        ]
+      },
+      "boss": {
+        "levelId": 184,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Greedy Algorithms with 1 problem(s).",
+        "questions": [
+          "Build a greedy-algorithm toolkit."
+        ]
+      }
+    }
+  },
+  {
+    "day": 47,
+    "title": "Dynamic Programming",
+    "rawTitle": "Day 47",
+    "topics": [
+      "Dynamic Programming"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 185,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Dynamic Programming with 3 problem(s).",
+        "questions": [
+          "Explain overlapping subproblems and optimal substructure.",
+          "Calculate Fibonacci using memoization.",
+          "Calculate Fibonacci using tabulation."
+        ]
+      },
+      "medium": {
+        "levelId": 186,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Dynamic Programming with 3 problem(s).",
+        "questions": [
+          "Solve climbing stairs using DP.",
+          "Solve 0/1 knapsack.",
+          "Find longest common subsequence."
+        ]
+      },
+      "hard": {
+        "levelId": 187,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Dynamic Programming with 3 problem(s).",
+        "questions": [
+          "Find longest increasing subsequence.",
+          "Find minimum coins for a target.",
+          "Find edit distance between two strings."
+        ]
+      },
+      "boss": {
+        "levelId": 188,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Dynamic Programming with 1 problem(s).",
+        "questions": [
+          "Build a DP toolkit with solution reconstruction where applicable."
+        ]
+      }
+    }
+  },
+  {
+    "day": 48,
+    "title": "Backtracking",
+    "rawTitle": "Day 48",
+    "topics": [
+      "Backtracking"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 189,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Backtracking with 3 problem(s).",
+        "questions": [
+          "Generate all subsets.",
+          "Generate all permutations.",
+          "Generate all binary strings of length n."
+        ]
+      },
+      "medium": {
+        "levelId": 190,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Backtracking with 3 problem(s).",
+        "questions": [
+          "Generate combinations of k from n.",
+          "Solve N-Queens for small n.",
+          "Solve a maze using backtracking."
+        ]
+      },
+      "hard": {
+        "levelId": 191,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Backtracking with 3 problem(s).",
+        "questions": [
+          "Generate valid parentheses.",
+          "Solve a small Sudoku.",
+          "Find subsets with a target sum."
+        ]
+      },
+      "boss": {
+        "levelId": 192,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Backtracking with 1 problem(s).",
+        "questions": [
+          "Build a backtracking toolkit and measure the effect of pruning."
+        ]
+      }
+    }
+  },
+  {
+    "day": 49,
+    "title": "Integrated DSA",
+    "rawTitle": "Day 49",
+    "topics": [
+      "Integrated DSA"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 193,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for Integrated DSA with 3 problem(s).",
+        "questions": [
+          "Choose a suitable structure for an undo system.",
+          "Choose a suitable structure for a printer queue.",
+          "Choose a suitable search algorithm for sorted data."
+        ]
+      },
+      "medium": {
+        "levelId": 194,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for Integrated DSA with 3 problem(s).",
+        "questions": [
+          "Choose a graph representation for a sparse graph.",
+          "Choose a structure for a dictionary.",
+          "Design browser history using data structures."
+        ]
+      },
+      "hard": {
+        "levelId": 195,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for Integrated DSA with 3 problem(s).",
+        "questions": [
+          "Design a task scheduler using a priority queue.",
+          "Design a route planner using a weighted graph.",
+          "Build a word-frequency analyzer using hashing and sorting."
+        ]
+      },
+      "boss": {
+        "levelId": 196,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for Integrated DSA with 1 problem(s).",
+        "questions": [
+          "Build an integrated C DSA toolkit."
+        ]
+      }
+    }
+  },
+  {
+    "day": 50,
+    "title": "DSA Capstone",
+    "rawTitle": "Day 50",
+    "topics": [
+      "DSA Capstone"
+    ],
+    "levels": {
+      "basic": {
+        "levelId": 197,
+        "name": "Basic",
+        "xp": 100,
+        "questionsCount": 3,
+        "summary": "Basic level challenge for DSA Capstone with 3 problem(s).",
+        "questions": [
+          "Implement an array module with search and sorting.",
+          "Implement a linked-list module.",
+          "Implement a stack module."
+        ]
+      },
+      "medium": {
+        "levelId": 198,
+        "name": "Medium",
+        "xp": 200,
+        "questionsCount": 3,
+        "summary": "Medium level challenge for DSA Capstone with 3 problem(s).",
+        "questions": [
+          "Implement a queue module.",
+          "Implement a hash-table module.",
+          "Implement a tree module."
+        ]
+      },
+      "hard": {
+        "levelId": 199,
+        "name": "Hard",
+        "xp": 300,
+        "questionsCount": 3,
+        "summary": "Hard level challenge for DSA Capstone with 3 problem(s).",
+        "questions": [
+          "Implement a heap-based priority queue.",
+          "Implement a graph module with BFS and DFS.",
+          "Combine at least three structures and two algorithms in one project."
+        ]
+      },
+      "boss": {
+        "levelId": 200,
+        "name": "Boss",
+        "xp": 500,
+        "questionsCount": 1,
+        "summary": "Boss level challenge for DSA Capstone with 1 problem(s).",
+        "questions": [
+          "Final Boss: build a complete DSA application from a blank C project and document its complexity and memory management."
+        ]
+      }
+    }
   }
 ];

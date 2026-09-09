@@ -15,7 +15,7 @@ if sys.platform == "win32":
 
 PORT = 8000
 DATA_FILE = os.path.join(os.path.dirname(__file__), 'data', 'progress.json')
-DB_FILE = r"C:\Users\athar\Downloads\c_recovery_questions.db"
+DB_FILE = r"C:\Users\athar\Downloads\c_recovery_with_advanced_dsa.db"
 PUBLIC_DIR = os.path.join(os.path.dirname(__file__), 'public')
 
 RANKS = [
@@ -24,7 +24,10 @@ RANKS = [
     {"name": "⚔️ C Problem Solver", "minXP": 1500, "maxXP": 2999},
     {"name": "🔥 C Programmer", "minXP": 3000, "maxXP": 4999},
     {"name": "💻 C Developer", "minXP": 5000, "maxXP": 7499},
-    {"name": "👑 C Master", "minXP": 7500, "maxXP": 999999}
+    {"name": "👑 C Master", "minXP": 7500, "maxXP": 11999},
+    {"name": "🌳 DSA Specialist", "minXP": 12000, "maxXP": 17999},
+    {"name": "⚡ Algorithm Architect", "minXP": 18000, "maxXP": 24999},
+    {"name": "🚀 DSA Grandmaster", "minXP": 25000, "maxXP": 999999}
 ]
 
 XP_TABLE = {
@@ -41,7 +44,7 @@ def get_next_level(day, level):
     if idx < len(LEVEL_ORDER) - 1:
         return day, LEVEL_ORDER[idx + 1]
     else:
-        if day < 30:
+        if day < 50:
             return day + 1, "basic"
         return None, None
 
@@ -49,7 +52,7 @@ def calculate_rank(xp):
     for r in RANKS:
         if r["minXP"] <= xp <= r["maxXP"]:
             return r["name"]
-    return "👑 C Master"
+    return "🚀 DSA Grandmaster"
 
 def read_progress():
     if not os.path.exists(DATA_FILE):
@@ -124,6 +127,10 @@ def check_badges(data):
         earned.add("c_programmer")
     if "day30_boss" in completed or total_xp >= 7500:
         earned.add("c_master")
+    if any(int(lvl.split('_')[0].replace('day', '')) > 30 for lvl in completed if '_' in lvl and lvl.split('_')[0].replace('day','').isdigit()):
+        earned.add("dsa_explorer")
+    if "day50_boss" in completed or total_xp >= 25000:
+        earned.add("dsa_grandmaster")
 
     data["badges"] = list(earned)
 

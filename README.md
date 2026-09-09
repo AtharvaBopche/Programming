@@ -74,18 +74,22 @@ python evaluate.py --day 1 --level basic --perfect
 - **⚔️ C Problem Solver**: 1,500 – 2,999 XP
 - **🔥 C Programmer**: 3,000 – 4,999 XP
 - **💻 C Developer**: 5,000 – 7,499 XP
-- **👑 C Master**: 7,500+ XP
+- **👑 C Master**: 7,500 – 11,999 XP
+- **🌳 DSA Specialist**: 12,000 – 17,999 XP
+- **⚡ Algorithm Architect**: 18,000 – 24,999 XP
+- **🚀 DSA Grandmaster**: 25,000+ XP
 
 ---
 
-## 🗺️ 6. 30-Day Course Structure
+## 🗺️ 6. 50-Day Course & DSA Structure
 
 Every single day features 4 difficulty levels:
 - **🟢 Basic**: 5 questions
 - **🟡 Medium**: 5 questions
 - **🔴 Hard**: 3–5 questions
-- **⚫ Boss**: 1–2 real-world challenges (Day 30 is the 👑 Student Management System Final Boss)
+- **⚫ Boss**: 1–2 real-world challenges
 
+### 📘 Phase 1: Core C Fundamentals (Days 1–30)
 | Day | Topic |
 | :--- | :--- |
 | **Day 1** | C Basics + Input/Output |
@@ -117,7 +121,31 @@ Every single day features 4 difficulty levels:
 | **Day 27** | Structure Problems |
 | **Day 28** | File Handling |
 | **Day 29** | Dynamic Memory |
-| **Day 30** | 👑 FINAL BOSS — Student Management System |
+| **Day 30** | 👑 Phase 1 Boss — Student Management System |
+
+### 🚀 Phase 2: Advanced Data Structures & Algorithms (Days 31–50)
+| Day | Topic |
+| :--- | :--- |
+| **Day 31** | Arrays & Complexity |
+| **Day 32** | Searching Algorithms |
+| **Day 33** | Sorting Algorithms |
+| **Day 34** | Recursion |
+| **Day 35** | Linked Lists Basics |
+| **Day 36** | Advanced Linked Lists |
+| **Day 37** | Doubly & Circular Linked Lists |
+| **Day 38** | Stacks |
+| **Day 39** | Queues |
+| **Day 40** | Hashing |
+| **Day 41** | Trees Basics |
+| **Day 42** | Binary Search Trees |
+| **Day 43** | Heaps & Priority Queues |
+| **Day 44** | Graphs Basics |
+| **Day 45** | Shortest Paths & MST |
+| **Day 46** | Greedy Algorithms |
+| **Day 47** | Dynamic Programming |
+| **Day 48** | Backtracking |
+| **Day 49** | Integrated DSA |
+| **Day 50** | 🚀 FINAL BOSS — DSA Capstone Challenge |
 
 ---
 

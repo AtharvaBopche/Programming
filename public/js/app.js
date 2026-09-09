@@ -116,13 +116,14 @@ function renderXPHero() {
 
   document.getElementById('dashStreak').textContent = `${progressState.streak || 0} Days`;
   
+  const totalLevels = (COURSE_DATA.length || 50) * 4;
   const completedCount = (progressState.completedLevels || []).length;
-  document.getElementById('dashCompletedCount').textContent = `${completedCount} / 120`;
+  document.getElementById('dashCompletedCount').textContent = `${completedCount} / ${totalLevels}`;
   
   const badgesCount = (progressState.badges || []).length;
   document.getElementById('dashBadgesCount').textContent = `${badgesCount} / ${GAMIFICATION.BADGES.length}`;
   
-  const overallPercent = Math.min(100, Math.floor((completedCount / 120) * 100));
+  const overallPercent = Math.min(100, Math.floor((completedCount / totalLevels) * 100));
   document.getElementById('dashOverallPercent').textContent = `${overallPercent}%`;
 }
 
@@ -146,6 +147,8 @@ function renderCurrentMission() {
   document.getElementById('missionSummaryText').textContent = levelDetails.summary;
 }
 
+let currentPhaseFilter = 'all';
+
 // LEVEL MAP SKILL TREE
 function renderLevelMap() {
   const container = document.getElementById('levelMapContainer');
@@ -155,7 +158,28 @@ function renderLevelMap() {
   const unlocked = new Set(progressState.unlockedLevels || []);
   const curKey = `day${progressState.currentDay}_${progressState.currentLevel}`;
 
-  COURSE_DATA.forEach(day => {
+  const daysToRender = COURSE_DATA.filter(d => {
+    if (currentPhaseFilter === '1') return d.day <= 30;
+    if (currentPhaseFilter === '2') return d.day > 30;
+    return true;
+  });
+
+  daysToRender.forEach(day => {
+    // Render phase banners when displaying 'all'
+    if (currentPhaseFilter === 'all') {
+      if (day.day === 1) {
+        const p1Banner = document.createElement('div');
+        p1Banner.className = 'phase-divider-banner phase-1';
+        p1Banner.innerHTML = '<h3>📘 Phase 1: Core C Fundamentals (Days 1–30)</h3>';
+        container.appendChild(p1Banner);
+      } else if (day.day === 31) {
+        const p2Banner = document.createElement('div');
+        p2Banner.className = 'phase-divider-banner phase-2';
+        p2Banner.innerHTML = '<h3>🚀 Phase 2: Advanced Data Structures & Algorithms (Days 31–50)</h3>';
+        container.appendChild(p2Banner);
+      }
+    }
+
     const isCurrentDay = day.day === progressState.currentDay;
     const row = document.createElement('div');
     row.className = `map-day-row ${isCurrentDay ? 'active-day-row' : ''}`;
@@ -219,7 +243,28 @@ function renderTopicList() {
 
   const completed = new Set(progressState.completedLevels || []);
 
-  COURSE_DATA.forEach(day => {
+  const daysToRender = COURSE_DATA.filter(d => {
+    if (currentPhaseFilter === '1') return d.day <= 30;
+    if (currentPhaseFilter === '2') return d.day > 30;
+    return true;
+  });
+
+  daysToRender.forEach(day => {
+    if (currentPhaseFilter === 'all') {
+      if (day.day === 1) {
+        const h1 = document.createElement('div');
+        h1.className = 'sidebar-phase-title';
+        h1.textContent = '📘 Core C (Days 1–30)';
+        container.appendChild(h1);
+      } else if (day.day === 31) {
+        const h2 = document.createElement('div');
+        h2.className = 'sidebar-phase-title';
+        h2.style.marginTop = '16px';
+        h2.textContent = '🚀 Advanced DSA (Days 31–50)';
+        container.appendChild(h2);
+      }
+    }
+
     let dayCompCount = 0;
     ['basic', 'medium', 'hard', 'boss'].forEach(lvl => {
       if (completed.has(`day${day.day}_${lvl}`)) dayCompCount++;
@@ -281,15 +326,18 @@ function renderStatsGrid() {
     }
   });
 
+  const totalDays = COURSE_DATA.length || 50;
+  const totalLevels = totalDays * 4;
+
   const stats = [
     { label: "Total XP", value: (progressState.totalXP || 0).toLocaleString() },
     { label: "Current Rank", value: (progressState.rank || "🥚 C Beginner").split(' ')[1] || "Beginner" },
-    { label: "Levels Completed", value: `${completed.length} / 120` },
-    { label: "Topics Completed", value: `${topicCompCount} / 30` },
-    { label: "🟢 Basic Done", value: `${basicCount} / 30` },
-    { label: "🟡 Medium Done", value: `${mediumCount} / 30` },
-    { label: "🔴 Hard Done", value: `${hardCount} / 30` },
-    { label: "⚫ Bosses Defeated", value: `${bossCount} / 30` },
+    { label: "Levels Completed", value: `${completed.length} / ${totalLevels}` },
+    { label: "Topics Completed", value: `${topicCompCount} / ${totalDays}` },
+    { label: "🟢 Basic Done", value: `${basicCount} / ${totalDays}` },
+    { label: "🟡 Medium Done", value: `${mediumCount} / ${totalDays}` },
+    { label: "🔴 Hard Done", value: `${hardCount} / ${totalDays}` },
+    { label: "⚫ Bosses Defeated", value: `${bossCount} / ${totalDays}` },
     { label: "Current Streak", value: `${progressState.streak || 0} Days` },
     { label: "Longest Streak", value: `${progressState.longestStreak || 0} Days` }
   ];
@@ -480,7 +528,7 @@ function processClientEvaluation(day, level, perfect) {
     nextKey = `day${day}_${order[idx + 1]}`;
     progressState.currentDay = day;
     progressState.currentLevel = order[idx + 1];
-  } else if (day < 30) {
+  } else if (day < (COURSE_DATA.length || 50)) {
     nextKey = `day${day + 1}_basic`;
     progressState.currentDay = day + 1;
     progressState.currentLevel = 'basic';
@@ -598,6 +646,18 @@ function launchConfetti() {
 
 // DATA EXPORT / IMPORT / RESET
 function setupEventListeners() {
+  // Phase filter buttons
+  document.querySelectorAll('.phase-btn').forEach(btn => {
+    btn.onclick = () => {
+      audioFX.playClickSound();
+      document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPhaseFilter = btn.dataset.phase;
+      renderLevelMap();
+      renderTopicList();
+    };
+  });
+
   // Navigation tabs
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.onclick = () => {

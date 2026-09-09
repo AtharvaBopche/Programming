@@ -6,7 +6,7 @@ import sys
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding='utf-8')
 
-db_path = r"C:\Users\athar\Downloads\c_recovery_questions.db"
+db_path = r"C:\Users\athar\Downloads\c_recovery_with_advanced_dsa.db"
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 

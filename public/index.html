@@ -133,13 +133,19 @@
         <!-- VISUAL LEVEL MAP ROADMAP -->
         <div class="card level-map-card">
           <div class="section-title-row">
-            <h2>🗺️ Course Progression Map</h2>
+            <h2>🗺️ 50-Day Course & DSA Progression Map</h2>
             <div class="level-legend">
               <span class="legend-item"><span class="badge-dot dot-basic">🟢</span> Basic (+100 XP)</span>
               <span class="legend-item"><span class="badge-dot dot-medium">🟡</span> Medium (+200 XP)</span>
               <span class="legend-item"><span class="badge-dot dot-hard">🔴</span> Hard (+300 XP)</span>
               <span class="legend-item"><span class="badge-dot dot-boss">⚫</span> Boss (+500 XP)</span>
             </div>
+          </div>
+
+          <div class="phase-filter-row" style="display: flex; gap: 8px; margin: 12px 0 16px 0;">
+            <button class="btn btn-secondary phase-btn active" data-phase="all" id="phaseBtnAll">🌟 All 50 Days</button>
+            <button class="btn btn-secondary phase-btn" data-phase="1" id="phaseBtn1">📘 Phase 1: Core C (Days 1–30)</button>
+            <button class="btn btn-secondary phase-btn" data-phase="2" id="phaseBtn2">🚀 Phase 2: Advanced DSA (Days 31–50)</button>
           </div>
 
           <p class="map-subtitle">Complete levels sequentially to unlock the next challenge!</p>
@@ -166,7 +172,7 @@
         <!-- TAB 1: TOPIC PROGRESS BREAKDOWN -->
         <div class="tab-content active" id="tabTopics">
           <div class="card topic-progress-card">
-            <h3 class="sidebar-card-title">30-Day Topic Breakdown</h3>
+            <h3 class="sidebar-card-title">50-Day Topic & DSA Breakdown</h3>
             <div class="topic-list" id="topicListContainer">
               <!-- Dynamically populated topics -->
             </div>
